@@ -1,0 +1,67 @@
+{
+    "name": "dividebuy/payment",
+    "description": "Sage Pay Laravel package implementing Protocol Version 3.00",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "payment",
+        "gateway",
+        "sagepay",
+        "e-commerce",
+        "webshop",
+        "financial",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Khululekani Mkhonza",
+            "email": "khulu.mkhonza@dividebuy.co.uk",
+            "role": "Developer"
+        }, {
+            "name": "DivideBuy",
+            "email": "github@dividebuy.co.uk",
+            "role": "Management Account"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable":true,
+    "require": {
+        "guzzlehttp/guzzle": "^6.4",
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.4",
+        "illuminate/support": "^6.5",
+        "mockery/mockery": "^1.2",
+        "orchestra/testbench": "^4.3",
+        "phpunit/phpunit": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "DivideBuy\\Payment\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DivideBuy\\SagePay\\Tests\\":"tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DivideBuy\\SagePay\\SagePayServiceProvider"
+            ],
+            "aliases": {
+                "SagePay": "DivideBuy\\SagePay\\SagePayFacade"
+            }
+        }
+    }
+}
